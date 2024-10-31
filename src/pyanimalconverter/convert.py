@@ -9,10 +9,13 @@ def parse_args(args):
     parser = argparse.ArgumentParser()
 
     subparsers = parser.add_subparsers(dest="operation", required=True)
+
+    # Parser to accept help command
     help_parser = subparsers.add_parser("help", help="Show verbose help instructions")
 
     # Write the flags for the compare function
     compare_parser = subparsers.add_parser("compare", help="Compare two values by units")
+    # Take arguments for 2 numbers and 2 units
     compare_parser.add_argument(
         'num1', 
         nargs=1, 
@@ -42,7 +45,9 @@ def parse_args(args):
         help="Unit of second number (run `help` to see units)",
     )
 
+    # Writing flags for the convert function
     convert_parser = subparsers.add_parser("convert", help="Convert a value to another unit")
+    # Takes in one number and a from_unit and to_unit
     convert_parser.add_argument(
         'num1',
         nargs=1,
