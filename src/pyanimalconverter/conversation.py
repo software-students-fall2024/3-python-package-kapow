@@ -1,4 +1,5 @@
 import os
+import convert
 from pint import UnitRegistry
 
 ureg = UnitRegistry()
@@ -58,12 +59,32 @@ def askAnimal():
                 try:
                     convertFrom_num = Q_(convertFrom);
                 except Exception as e:
+                    os.system('clear');
                     print(e);
+                    print(talk("I don't understand, please tell me a number with the right format - ribbit!"));
+                    continue;
                 else:
                     os.system('clear');
-                    convertTo = input("")
-        menuInput = input("Continue? (Y/N): ")
-        if(menuInput == "N"):
-            break
+                    print(convertFrom_num.magnitude);
+                    print(convertFrom_num.units);
+                    print(talk("What do you want to convert this number to?",f"{convertFrom_num.magnitude} {convertFrom_num.units}"))
+                    while(True):
+                        try:
+                            convertTo = input("Enter unit type (e.g. kg, cm, lb): ")
+                            finalAnswer = convert.convert(convertFrom_num.magnitude, convertFrom_num.units, convertTo)
+                            print('good')
+                        except Exception as e:
+                            os.system('clear');
+                            print(e);
+                            print(talk("I can't interpret this unit. Please give me another unit type or retype!"));
+                            continue;
+                        else:
+                            os.system('clear')
+                            print(talk(f"{finalAnswer.magnitude} {finalAnswer.units}"));
+                            break;
+                    break;
+            menuInput = input("Continue? (Y/N): ")
+            if(menuInput == "N"):
+                break
 
 askAnimal();
