@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 import os
 import convert
-=======
-import os, sys
->>>>>>> 83b2873bde3e409ab5ab3619c3f3ca3c05c1c0e2
 from pint import UnitRegistry
 import pyanimalconverter.convert as convert
 
