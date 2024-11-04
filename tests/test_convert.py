@@ -23,7 +23,7 @@ def test_convert_diff_compatible_units():
     assert quantity.magnitude == 1000
     assert quantity.units == "meter"
 
-def test_convert_diff_incompatible_units():
+def test_convert_incompatible_units():
     with pytest.raises(DimensionalityError):    # pint raises this Dimens Err. when you try to convert incompatible units; tests passes if our convert function raises it too
         quantity = convert.convert(1, "km", "lb")
 
