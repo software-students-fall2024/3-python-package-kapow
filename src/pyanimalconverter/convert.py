@@ -57,17 +57,16 @@ def convert(num1, from_unit, to_unit):
         from_registry = ureg.parse_expression(from_unit)
         to_registry = ureg.parse_expression(to_unit)
     except Exception as e:
-        print(f'Error parsing unit(s): {e}')
-        sys.exit(1)
+        print(f'Error parsing unit(s): {e}', file=sys.stderr)
+        raise SystemExit(1)
     if not from_registry.is_compatible_with(to_registry):
-        print(f"Invalid conversion {from_registry.units} to {to_registry.units}")
-        sys.exit(1)
+        print(f"Invalid conversion {from_registry.units} to {to_registry.units}", file=sys.stderr)
+        raise SystemExit(2)
 
     Q_ = ureg.Quantity
     quant = Q_(num1, from_registry)
     quant = quant.to(to_registry)
-
-    return quant
+    return float(quant.magnitude)
 
 # parses the arguments of the command
 def parse_main_args(args):
