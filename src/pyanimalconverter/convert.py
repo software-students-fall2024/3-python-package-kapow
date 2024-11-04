@@ -67,4 +67,65 @@ def convert(num1, from_unit, to_unit):
     Q_ = ureg.Quantity
     quant = Q_(num1, from_registry)
     quant = quant.to(to_registry)
+
     return quant
+
+# parses the arguments of the command
+def parse_main_args(args):
+    parser = argparse.ArgumentParser()
+
+    subparsers = parser.add_subparsers(dest="operation", required=True)
+
+    # Parser to accept help command
+    help_parser = subparsers.add_parser("help", help="Show verbose help instructions")
+    help_units_parser = help_parser.add_subparsers(dest="help_subcommand")
+    units_parser = help_units_parser.add_parser("units", help="Display all units")
+
+    # Write the flags for the compare function
+    compare_parser = subparsers.add_parser("compare", help="Compare two values by units")
+    # Take arguments for 2 numbers and 2 units
+    compare_parser.add_argument(
+        'num1',  
+        type=float, 
+        metavar="num1",
+        help="Value of first unit to compare",
+    )
+    compare_parser.add_argument(
+        'num2', 
+        type=float, 
+        metavar="num2",
+        help="Value of second unit to compare",
+    )
+    compare_parser.add_argument(
+        'unit1',
+        metavar="unit1",
+        help="Unit of first number (run `help` to see units)",
+    )
+    compare_parser.add_argument(
+        'unit2',
+        metavar="unit2",
+        help="Unit of second number (run `help` to see units)",
+    )
+
+    # Writing flags for the convert function
+    convert_parser = subparsers.add_parser("convert", help="Convert a value to another unit")
+    # Takes in one number and a from_unit and to_unit
+    convert_parser.add_argument(
+        'num1',
+        type=float,
+        help="Value of unit to convert",
+    )
+    convert_parser.add_argument(
+        'from_unit',
+        metavar='from_unit',
+        help="Unit given input value",
+    )
+    convert_parser.add_argument(
+        'to_unit',
+        metavar='to_unit',
+        help="Unit of desired output value",
+    )
+
+    args = parser.parse_args(args)
+
+    return args
