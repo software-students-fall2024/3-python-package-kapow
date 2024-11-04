@@ -1,4 +1,4 @@
-import src.pyanimalconverter.convert as convert
+import pyanimalconverter.convert as convert
 import sys
 
 def min(meas: list) -> str:
@@ -74,4 +74,4 @@ def max(meas: list) -> str:
 # print(convert.convert(1, "ft", "in"))
 # input3 = ["24 in", "42 in", "1 ft", "1 m", "4 km"]
 # print(min(input3))
-print(min(["2 in", "8 in", "5 lb"]))
+#print(min(["4 nm", "2 in", "8 in"]))

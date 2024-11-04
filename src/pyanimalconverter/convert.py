@@ -68,7 +68,7 @@ we = {
 
 
 def convert(num1: float, from_unit: str, to_unit: str) -> float:
-    if not from_unit in we.keys():
+    if from_unit not in we.keys() or to_unit not in we.keys():
         return -1
     elif to_unit not in we.get(from_unit).keys():
         return -2 #incompatible

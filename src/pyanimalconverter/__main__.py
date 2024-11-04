@@ -1,5 +1,7 @@
 import argparse
 import sys
+import pyanimalconverter.convert as convert
+import pyanimalconverter.minmax as minmax
 
 CHOICES = {"km", "kilometers", "mi", "miles", "lb", "pounds", "kg", "kilograms"}
 bubble = '''
