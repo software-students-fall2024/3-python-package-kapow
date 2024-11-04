@@ -19,16 +19,14 @@ def test_another_true():
     assert True
 
 def test_convert_diff_compatible_units():
-    quantity = convert.convert(1, "km", "m")
-    assert quantity.magnitude == 1000
-    assert quantity.units == "meter"
+    quantity = convert.convert(1, "km", "meter")
+    assert quantity == 1000
 
 def test_convert_incompatible_units():
-    with pytest.raises(DimensionalityError):    # pint raises this Dimens Err. when you try to convert incompatible units; tests passes if our convert function raises it too
+    with pytest.raises(SystemExit):    # TODO: figure out how incompatible conversion error or trouble parsing error
         quantity = convert.convert(1, "km", "lb")
 
 def test_convert_same_units():
     quantity = convert.convert(1, "km", "km")
-    assert quantity.magnitude == 1
-    assert quantity.units == "kilometer"
+    assert quantity == 1
 

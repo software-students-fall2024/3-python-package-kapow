@@ -108,4 +108,4 @@ def askAnimal():
         # if(menuInput == "N"):
         #     break
 
-askAnimal();
+# askAnimal();
