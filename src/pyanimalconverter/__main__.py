@@ -1,5 +1,7 @@
 import sys
-from . import convert
+import pyanimalconverter.convert as convert
+import pyanimalconverter.conversation as conversation
+
 
 
 def main():

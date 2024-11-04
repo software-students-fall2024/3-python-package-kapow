@@ -6,7 +6,9 @@ name = "pypi"
 [packages]
 build = "*"
 twine = "*"
+pint = "*"
 pytest = "*"
+
 
 [dev-packages]
 

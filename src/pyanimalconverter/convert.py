@@ -67,6 +67,7 @@ def convert(num1, from_unit, to_unit):
     Q_ = ureg.Quantity
     quant = Q_(num1, from_registry)
     quant = quant.to(to_registry)
+
     return quant
 
 # parses the arguments of the command
