@@ -22,8 +22,12 @@ def test_diff():
     assert minmax.max(input3) == "4 km"
 
 def test_errors():
-    assert minmax.max(["2 in", "8 in", "5 lb"]) == -2
-    assert minmax.max(["4 nm", "2 in", "8 in"]) == -1
+    with pytest.raises(SystemExit) as se:
+        minmax.max(["2 in", "8 in", "5 lb"])
+        assert se.value.code == 2
+    with pytest.raises(SystemExit) as se:
+        minmax.max(["4 chickens", "2 in", "8 in"])
+        assert se.value.code == 1
 
 def test_empty():
     with pytest.raises(SystemExit):

@@ -28,8 +28,10 @@ def min(meas: list) -> str:
         item = meas[i].split(" ")
         try:
             val = convert.convert(float(item[0]), item[1], units)
+        except SystemExit as e:
+            raise e #something that wasn't a number was there
         except:
-            return -3 #something that wasn't a number was there
+            return -3
         if val < 0:
             return val
         elif val < minval:
@@ -67,8 +69,10 @@ def max(meas: list) -> str:
         item = meas[i].split(" ")
         try:
             val = convert.convert(float(item[0]), item[1], units)
+        except SystemExit as e:
+            raise e #something that wasn't a number was there
         except:
-            return -3 #something that wasn't a number was there
+            return -3
         if val < 0:
             return val
         elif val > maxval:
