@@ -26,5 +26,5 @@ def test_errors():
     assert minmax.min(["4 nm", "2 in", "8 in"]) == -1
 
 def test_empty():
-    with pytest.raises(SystemExit(1)):
+    with pytest.raises(SystemExit):
         minmax.min([])
