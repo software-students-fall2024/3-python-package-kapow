@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "047eca76e979333597571eab7aa379d4b3936ea3945850fb2904e74ceff930de"
+            "sha256": "178f946a0818d5322f574c83b187d2dcc4042eee3aad49de1846f7b86575424f"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -28,7 +28,7 @@
                 "sha256:77e284d754527b01fb1e6fa8a1afe577858ebe4e9dad8919e34c862cb399bc34",
                 "sha256:d75e02c268746e1b8144c278978b6e98e85de6ad16f8e4b0844a154557eca991"
             ],
-            "markers": "python_version >= '3.8'",
+            "markers": "python_version < '3.12'",
             "version": "==1.2.0"
         },
         "build": {
@@ -317,6 +317,10 @@
             "markers": "python_version >= '3.8'",
             "version": "==1.5.0"
         },
+        "pyanimalconverter": {
+            "editable": true,
+            "file": "."
+        },
         "pygments": {
             "hashes": [
                 "sha256:786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199",
@@ -376,11 +380,11 @@
         },
         "rich": {
             "hashes": [
-                "sha256:9836f5096eb2172c9e77df411c1b009bace4193d6a481d534fea75ebba758283",
-                "sha256:bc1e01b899537598cf02579d2b9f4a415104d3fc439313a7a2c165d76557a08e"
+                "sha256:439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098",
+                "sha256:6049d5e6ec054bf2779ab3358186963bac2ea89175919d699e378b99738c2a90"
             ],
             "markers": "python_full_version >= '3.8.0'",
-            "version": "==13.9.3"
+            "version": "==13.9.4"
         },
         "twine": {
             "hashes": [

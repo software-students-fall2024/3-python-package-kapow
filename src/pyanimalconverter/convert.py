@@ -13,7 +13,6 @@ def print_units():
     categories = defaultdict(list)
 
     # Group units by their dimensionality
-    
     for unit in ureg._units:
         try:
             unit_obj = ureg[unit]

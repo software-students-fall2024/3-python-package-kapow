@@ -1,5 +1,4 @@
 import os
-import convert
 from pint import UnitRegistry
 import pyanimalconverter.convert as convert
 
