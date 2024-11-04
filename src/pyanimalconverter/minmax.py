@@ -18,7 +18,10 @@ def min(meas: list) -> str:
     
     #otherwise check the first item, will define 'unit family'
     first: list = meas[0].split(" ")
-    minval = float(first[0])
+    try:
+        minval = float(first[0])
+    except:
+        return -3
     cur_min = meas[0]
     units = first[1]
     for i in range(1, len(meas)):
@@ -54,7 +57,10 @@ def max(meas: list) -> str:
     
     #otherwise check the first item, will define 'unit family'
     first: list = meas[0].split(" ")
-    maxval = float(first[0])
+    try:
+        maxval = float(first[0])
+    except:
+        return -3
     cur_max = meas[0]
     units = first[1]
     for i in range(1, len(meas)):
