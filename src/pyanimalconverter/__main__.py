@@ -1,6 +1,8 @@
 import sys
 import pyanimalconverter.convert as convert
 import pyanimalconverter.minmax as minmax
+import pyanimalconverter.conversation as conversation
+
 
 
 def main():
