@@ -59,6 +59,7 @@ def askAnimal():
                 try:
                     convertFrom_num = Q_(convertFrom);
                     fromUnit = ureg.parse_expression(convertFrom.split(" ")[1])
+                    fromUnit_two = convertFrom.split(" ")[1]
                 except Exception as e:
                     os.system('clear');
                     print(e);
@@ -72,8 +73,8 @@ def askAnimal():
                     while(True):
                         try:
                             convertTo = input("Enter unit type (e.g. kg, cm, lb): ")
-                            finalAnswer = convert.convert(convertFrom_num.magnitude, convertFrom_num.units, convertTo)
-                            print('good')
+                            # print(convert.convert(convertFrom_num.magnitude, "km", "meter"))
+                            finalAnswer = convert.convert(convertFrom_num.magnitude, fromUnit_two, convertTo)
                         except Exception as e:
                             os.system('clear');
                             print(e);
@@ -81,7 +82,7 @@ def askAnimal():
                             continue;
                         else:
                             os.system('clear')
-                            print(talk(f"{finalAnswer.magnitude} {finalAnswer.units}"));
+                            print(talk(f"{finalAnswer} {convertTo}"));
                             break;
                     break;
             menuInput = input("Continue? (Y/N): ")
@@ -105,7 +106,7 @@ def askAnimal():
         #                 break;
                         
         # menuInput = input("Continue? (Y/N): ")
-        # if(menuInput == "N"):
-        #     break
+        if(menuInput == "N"):
+            break
 
-# askAnimal();
+askAnimal();
