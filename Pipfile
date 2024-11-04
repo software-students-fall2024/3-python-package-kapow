@@ -6,8 +6,8 @@ name = "pypi"
 [packages]
 build = "*"
 twine = "*"
-pytest = "*"
 pint = "*"
+pytest = "*"
 pyanimalconverter = {file = ".", editable = true}
 
 [dev-packages]
