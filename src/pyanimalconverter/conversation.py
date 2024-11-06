@@ -50,12 +50,16 @@ def askAnimal():
             print(menuInput);
             if(menuInput=="CONVERT"):
                 navigation="convert";
+            elif(menuInput=="COMPARE"):
+                navigation="compare";
         if(navigation=="convert"):
             os.system('clear');
             print(talk("Ribbit, ok, what number do you want to convert?","I want to convert a number!"));
-            validUnit = True;
             while(True):
-                convertFrom = input("Enter the number with units (e.g. 1 kg, 5 kg) you want to convert: ");
+                convertFrom = input("Enter the number with units (e.g. 1 kg, 5 kg) you want to convert (or MENU to cancel): ");
+                if "MENU" or "menu" in convertFrom:
+                    navigation="menu";
+                    break;
                 try:
                     convertFrom_num = Q_(convertFrom);
                     fromUnit = ureg.parse_expression(convertFrom.split(" ")[1])
@@ -84,8 +88,15 @@ def askAnimal():
                             os.system('clear')
                             print(talk(f"{finalAnswer} {convertTo}"));
                             break;
-                    break;
-            menuInput = input("Continue? (Y/N): ")
+                    menuInput = input("Ask the frog to convert another number? (Y/N): ")
+                    if(menuInput == "N"):
+                        navigation="menu"
+                        break
+                    else:
+                        os.system('clear')
+                        print(talk("Ribbit, ok.. what number?","'Scuse me, can you convert another number?"));
+
+                    
         #     if(menuInput == "N"):
         #         break
         #             print("Unit is not valid!", file=sys.stderr)
@@ -106,7 +117,48 @@ def askAnimal():
         #                 break;
                         
         # menuInput = input("Continue? (Y/N): ")
-        if(menuInput == "N"):
-            break
+        if(menuInput == "compare"):
+            os.system('clear')
+            print(talk("What's the first number?"));
+            while(True):
+                compareFirst = input("Enter a number with units (e.g. 1 kg, 5 kg) you want to compare: ");
+                if "MENU" or "menu" in compareFirst:
+                    navigation="menu";
+                    break;
+                try:
+                    compareFirst_num = Q_(compareFirst);
+                    compareFirst_unit = convertFrom.split(" ")[1]
+                except Exception as e:
+                    os.system('clear');
+                    print(e);
+                    print(talk("I don't understand, please tell me a number with the right format - ribbit!"));
+                    continue;
+                else:
+                    os.system('clear');
+                    print(talk(f"What number do you want me to compare {compareFirst} with?",f"{compareFirst_num.magnitude} {compareFirst_num.units}"))
+                    while(True):
+                        try:
+                            compareSecond = input("Enter a number with units (e.g. 1 kg, 5 kg) you want to compare with: ")
+                            compareSecond_num = Q_(compareSecond);
+                            compareSecond_unit = compareSecond.split(" ")[1]
+                            # print(convert.convert(convertFrom_num.magnitude, "km", "meter"))
+                            finalAnswer = convert.compare(compareFirst_num.magnitude, compareSecond_num.magnitude, compareFirst_unit, compareSecond_unit)
+                        except Exception as e:
+                            os.system('clear');
+                            print(e);
+                            print(talk("I can't interpret this unit. Please give me another unit type or retype!"));
+                            continue;
+                        else:
+                            os.system('clear')
+                            print(talk("CODE TO BE WRITTEN")); # TODO: say which number (in its original pre-conversion form) is bigger
+                            break;
+                    menuInput = input("Ask the frog to compare more numbers? (Y/N): ")
+                    if(menuInput == "N"):
+                        navigation="menu"
+                        break
+                    else:
+                        os.system('clear')
+                        print(talk("Ribbit, ok.. what number?","'Scuse me, can you compare some other numbers?"));
+
 
 askAnimal();
