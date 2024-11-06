@@ -33,23 +33,34 @@ def print_units():
 
 def compare(num1, num2, unit1, unit2):
     """
-    Compares two quantities and returns an array of 2 PintQuantity variables with the largest being first
+    Compares two quantities and returns an integer denoting if first value is greater than/equal to/smaller than the second value
 
     Args:
         num1 (int): First value
         num2 (int): Second value
         unit1 (str): Unit of first value
-        unit2 (str): Unit of seconf value
+        unit2 (str): Unit of second value
 
     Returns:
-        list: The quantities as PintQuantity variables in descending order
+        int: 1 if first value is greater than second, 0 if equal, and -1 if first smaller than second.
     """
+    try:
+        unit1_registry = ureg.parse_expression(unit1)
+        unit2_registry = ureg.parse_expression(unit2)
+    except Exception as e:
+        print(f'Error parsing unit(s): {e}', file=sys.stderr)
+        raise SystemExit(1)
+    if not unit1_registry.is_compatible_with(unit2_registry):   # if the 2 units being compared aren't compatible (e.g. lbs with km)
+        print(f"Invalid comparison {unit1_registry.units} with {unit2_registry.units}", file=sys.stderr)
+        raise SystemExit(2)
     quant1 = convert(num1, unit1, unit1)
     quant2 = convert(num2, unit2, unit1)
-    if quant1 >= quant2:
-        return [quant1, quant2]
-    else:
-        return [quant2, quant1]
+    if quant1 > quant2:
+        return 1
+    elif quant1 == quant2:
+        return 0
+    else: # if quant2 is greater than quant1
+        return -1
     
 
 def convert(num1, from_unit, to_unit):

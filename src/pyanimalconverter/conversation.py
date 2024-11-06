@@ -139,8 +139,8 @@ def askAnimal():
                     while(True):
                         try:
                             compareSecond = input("Enter a number with units (e.g. 1 kg, 5 kg) you want to compare with: ")
-                            compareSecond_num = Q_(compareSecond);
-                            compareSecond_unit = compareSecond.split(" ")[1]
+                            compareSecond_num = Q_(compareSecond);  # just to check if user input in the right format
+                            compareSecond_unit = compareSecond.split(" ")[1]    # to extract the unit from the original input str
                             # print(convert.convert(convertFrom_num.magnitude, "km", "meter"))
                             finalAnswer = convert.compare(compareFirst_num.magnitude, compareSecond_num.magnitude, compareFirst_unit, compareSecond_unit)
                         except Exception as e:
