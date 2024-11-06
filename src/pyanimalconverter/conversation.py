@@ -155,4 +155,4 @@ def askAnimal():
                         print(talk("Ribbit, ok.. what's your first number?","'Scuse me, can you compare some more numbers?"));
                     
 
-askAnimal();
+# askAnimal();
