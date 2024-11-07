@@ -5,10 +5,10 @@ name = "pypi"
 
 [packages]
 build = "*"
-twine = "*"
 pytest = "*"
 pyanimalconverter = {file = ".", editable = true}
 pint = "*"
+twine = "*"
 
 [dev-packages]
 

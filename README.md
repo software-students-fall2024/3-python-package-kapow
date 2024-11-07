@@ -3,6 +3,7 @@
 ![Tests](https://github.com/software-students-fall2024/3-python-package-kapow/actions/workflows/build.yaml/badge.svg)
 
 ## Description
+
 Our package, pyanimalconverter, helps you to fullfill all of your unit conversion needs in convenient and enjoyable ways. You can simply get the conversions, compare two quantities in different units, or even find the minimum or maximum of a list. In addition, you can even choose to perform these conversions and comparisons in a conversation with some animal friends.
 
 ### Example
@@ -11,11 +12,11 @@ Our package, pyanimalconverter, helps you to fullfill all of your unit conversio
 
 ### Link to PyPI
 
-Link here coming soon
+[Link to PyPI](https://pypi.org/project/pyanimalconverter/1.12/)
 
 ## Instructions for Importing
 
-To import, please install the package with `pip install pyanimalconverter`. Then you can include `import pyanimalconverter` at the top of your code to use. 
+To import, please install the package with `pip install pyanimalconverter`. Then you can include `import pyanimalconverter` at the top of your code to use.
 
 ## Instructions for Setting Up
 
@@ -29,7 +30,7 @@ To set up the package for contribution, the virtual environment can be set up by
 - Stephen Spencer-Wong, [Github](https://github.com/StephenS2021)
 - William Xie, [Github](https://github.com/seeyeh)
 
-## How to Use 
+## How to Use
 
 There are three ways to use the package: through the command line, via importing, and in conversation with animals. Before proceeding with either of these, please install the package with `pip install pyanimalconverter` as noted above.
 
