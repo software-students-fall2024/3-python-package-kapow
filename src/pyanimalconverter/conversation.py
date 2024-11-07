@@ -160,5 +160,3 @@ def askAnimal():
                         os.system('clear')
                         print(talk("Ribbit, ok.. what number?","'Scuse me, can you compare some other numbers?"));
 
-
-askAnimal();

@@ -7,15 +7,18 @@ import pyanimalconverter.conversation as conversation
 
 def main():
     args = convert.parse_main_args(sys.argv[1:])
+    result = None
     if args.operation == 'compare':
-        convert.compare(args.num1, args.num2, args.unit1, args.unit2)
+        result = convert.compare(args.num1, args.num2, args.unit1, args.unit2)
     elif args.operation == 'convert':
-        convert.convert(args.num1, args.from_unit, args.to_unit)
+        result = convert.convert(args.num1, args.from_unit, args.to_unit)
     elif args.operation == 'help':
         pass
         if args.help_subcommand == "units":
             convert.print_units()
-    return args
+    if result != None:
+        print(result)
+    #return args #does some weird things with 'namespace'
 
 if __name__ == "__main__":
     main()
