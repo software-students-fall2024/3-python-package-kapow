@@ -8,7 +8,6 @@ build = "*"
 twine = "*"
 pytest = "*"
 pyanimalconverter = {file = ".", editable = true}
-pint = "*"
 
 [dev-packages]
 
