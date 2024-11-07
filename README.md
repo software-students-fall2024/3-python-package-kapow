@@ -7,11 +7,11 @@ Our package, pyanimalconverter, helps you to fullfill all of your unit conversio
 
 ### Example
 
-Example here
+[Link to example program in repository.](https://github.com/software-students-fall2024/3-python-package-kapow/blob/main/example.py)
 
 ### Link to PyPI
 
-Link here
+Link here coming soon
 
 ## Instructions for Importing
 
