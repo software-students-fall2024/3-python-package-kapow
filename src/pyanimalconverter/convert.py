@@ -1,6 +1,6 @@
 import argparse
 import sys
-from pint import *
+from pint import UnitRegistry
 from collections import defaultdict
 
 ureg = UnitRegistry()
