@@ -1,7 +1,5 @@
 name: Tests
 on:
-  push:
-    branches: [Pint-Import]
   pull_request:
     types: [opened, closed]
     branches: [main, master, pipfile-experiment]
