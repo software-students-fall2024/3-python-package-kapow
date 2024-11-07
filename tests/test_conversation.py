@@ -32,7 +32,3 @@ def test_navigate_exit(capfd):
     result = capfd.readouterr().out
     assert "Ok, bye. Ribbit." in result
     
-
-
-
-    
