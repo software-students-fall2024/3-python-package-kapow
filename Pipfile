@@ -6,9 +6,9 @@ name = "pypi"
 [packages]
 build = "*"
 twine = "*"
-pint = "*"
 pytest = "*"
 pyanimalconverter = {file = ".", editable = true}
+pint = "*"
 
 [dev-packages]
 
