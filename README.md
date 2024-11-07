@@ -12,7 +12,7 @@ Our package, pyanimalconverter, helps you to fullfill all of your unit conversio
 
 ### Link to PyPI
 
-[Link to PyPI](https://pypi.org/project/pyanimalconverter/1.12/)
+[Link to PyPI](https://pypi.org/project/pyanimalconverter/1.13/)
 
 ## Instructions for Importing
 
