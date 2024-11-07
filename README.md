@@ -1,6 +1,6 @@
 # Pyanimalconverter Package
 
-[Tests](https://github.com/software-students-fall2024/3-python-package-kapow/actions/workflows/build.yaml)
+![Tests](https://github.com/software-students-fall2024/3-python-package-kapow/actions/workflows/build.yaml/badge.svg)
 
 ## Description
 Our package, pyanimalconverter, helps you to fullfill all of your unit conversion needs in convenient and enjoyable ways. You can simply get the conversions, compare two quantities in different units, or even find the minimum or maximum of a list. In addition, you can even choose to perform these conversions and comparisons in a conversation with some animal friends.
