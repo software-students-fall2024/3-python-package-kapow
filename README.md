@@ -23,11 +23,11 @@ To set up the package for contribution, the virtual environment can be set up by
 
 ## Teammates
 
-- David Jimenez, [Github]
-- Sean Lee, [Github]
-- Madison Phung, [Github]
-- Stephen Spencer-Wong, [Github]
-- William Xie, [Github]
+- David Jimenez, [Github](https://github.com/drj8812)
+- Sean Lee, [Github](https://github.com/jseanlee)
+- Madison Phung, [Github](https://github.com/mkphung29)
+- Stephen Spencer-Wong, [Github](https://github.com/StephenS2021)
+- William Xie, [Github](https://github.com/seeyeh)
 
 ## How to Use 
 
