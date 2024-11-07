@@ -1,8 +1,8 @@
 import pytest
 from pyanimalconverter import convert
-from pint import *
+import pint
 
-ureg = UnitRegistry()
+ureg = pint.UnitRegistry()
 Q_ = ureg.Quantity
 
 def test_sanity_check():
